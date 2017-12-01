@@ -1384,7 +1384,7 @@
             segwitAvailable: false,
             onSelect: function() {
                 network = bitcoinjs.bitcoin.networks.pivx;
-                setHdCoin(44);
+                setHdCoin(77);
 		DOM.bip44coin.prop('readonly', true);
             },
         },
