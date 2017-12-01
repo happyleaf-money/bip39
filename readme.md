@@ -4,7 +4,7 @@ A tool for converting BIP39 mnemonic phrases to addresses and private keys.
 
 ## Online Version
 
-https://iancoleman.io/bip39/
+https://lab.nr1.co.in/bip39/
 
 ## Standalone offline version
 

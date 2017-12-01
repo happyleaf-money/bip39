@@ -1371,149 +1371,29 @@
 
     var networks = [
         {
-            name: "BCH - Bitcoin Cash",
-            segwitAvailable: false,
-            onSelect: function() {
-                DOM.useBitpayAddressesContainer.removeClass("hidden");
-                setBitcoinCashNetworkValues();
-                setHdCoin(145);
-            },
-        },
-        {
-            name: "BTC - Bitcoin",
-            segwitAvailable: true,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.bitcoin;
-                setHdCoin(0);
-            },
-        },
-        {
-            name: "BTC - Bitcoin Testnet",
-            segwitAvailable: true,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.testnet;
-                setHdCoin(1);
-            },
-        },
-        {
-            name: "BTG - Bitcoin Gold",
-            segwitAvailable: true,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.bgold;
-                setHdCoin(0);
-            },
-        },
-        {
-            name: "CLAM - Clams",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.clam;
-                setHdCoin(23);
-            },
-        },
-        {
-            name: "CRW - Crown",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.crown;
-                setHdCoin(72);
-            },
-        },
-        {
-            name: "DASH - Dash",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.dash;
-                setHdCoin(5);
-            },
-        },
-        {
-            name: "DASH - Dash Testnet",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.dashtn;
-                setHdCoin(1);
-            },
-        },
-        {
-            name: "DOGE - Dogecoin",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.dogecoin;
-                setHdCoin(3);
-            },
-        },
-        {
-            name: "ETH - Ethereum",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.bitcoin;
-                setHdCoin(60);
-            },
-        },
-        {
-            name: "FJC - Fujicoin",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.fujicoin;
-                setHdCoin(75);
-            },
-        },
-        {
-            name: "GAME - GameCredits",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.game;
-                setHdCoin(101);
-            },
-        },
-        {
-            name: "JBS - Jumbucks",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.jumbucks;
-                setHdCoin(26);
-            },
-        },
-        {
-            name: "LTC - Litecoin",
-            segwitAvailable: true,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.litecoin;
-                setHdCoin(2);
-                DOM.litecoinLtubContainer.removeClass("hidden");
-            },
-        },
-        {
-            name: "MAZA - Maza",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.maza;
-                setHdCoin(13);
-            },
-        },
-        {
-            name: "MONA - Monacoin",
-            segwitAvailable: true,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.monacoin,
-                setHdCoin(22);
-            },
-        },
-        {
-            name: "NMC - Namecoin",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.namecoin;
-                setHdCoin(7);
-            },
-        },
-        {
-            name: "PIVX - PIVX",
+            name: "PIVX - Standard Derivation",
             segwitAvailable: false,
             onSelect: function() {
                 network = bitcoinjs.bitcoin.networks.pivx;
-                setHdCoin(77);
+                setHdCoin(119);
+		DOM.bip44coin.prop('readonly', true);
+            },
+        },
+	{
+            name: "PIVX - Ledger Derivation",
+            segwitAvailable: false,
+            onSelect: function() {
+                network = bitcoinjs.bitcoin.networks.pivx;
+                setHdCoin(44);
+		DOM.bip44coin.prop('readonly', true);
+            },
+        },
+	{
+            name: "PIVX - Custom Derivation",
+            segwitAvailable: false,
+            onSelect: function() {
+                network = bitcoinjs.bitcoin.networks.pivx;
+                DOM.bip44coin.prop('readonly', false);
             },
         },
         {
@@ -1522,109 +1402,16 @@
             onSelect: function() {
                 network = bitcoinjs.bitcoin.networks.pivxtestnet;
                 setHdCoin(1);
+		DOM.bip44coin.prop('readonly', true);
             },
-        },
-        {
-            name: "PPC - Peercoin",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.peercoin;
-                setHdCoin(6);
-            },
-        },
-        {
-            name: "SDC - ShadowCash",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.shadow;
-                setHdCoin(35);
-            },
-        },
-        {
-            name: "SDC - ShadowCash Testnet",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.shadowtn;
-                setHdCoin(1);
-            },
-        },
-        {
-            name: "SLM - Slimcoin",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.slimcoin;
-                setHdCoin(63);
-            },
-        },
-        {
-            name: "SLM - Slimcoin Testnet",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.slimcointn;
-                setHdCoin(111);
-            },
-        },
-        {
-            name: "USNBT - NuBits",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.nubits;
-                setHdCoin(12);
-            },
-        },
-        {
-            name: "VIA - Viacoin",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.viacoin;
-                setHdCoin(14);
-            },
-        },
-        {
-            name: "VIA - Viacoin Testnet",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.viacointestnet;
-                setHdCoin(1);
-            },
-        },
-        {
-            name: "XMY - Myriadcoin",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.myriadcoin;
-                setHdCoin(90);
-            },
-        },
-        {
-            name: "XRP - Ripple",
-            segwitAvailable: false,
-            onSelect: function() {
-                network = bitcoinjs.bitcoin.networks.bitcoin;
-                setHdCoin(144);
-            },
-        }
+        }   
     ]
 
     var clients = [
         {
-            name: "Bitcoin Core",
+            name: "presstab.pw",
             onSelect: function() {
-                DOM.bip32path.val("m/0'/0'");
-                DOM.hardenedAddresses.prop('checked', true);
-            },
-        },
-        {
-            name: "blockchain.info",
-            onSelect: function() {
-                DOM.bip32path.val("m/44'/0'/0'");
-                DOM.hardenedAddresses.prop('checked', false);
-            },
-        },
-        {
-            name: "MultiBit HD",
-            onSelect: function() {
-                DOM.bip32path.val("m/0'/0");
+                DOM.bip32path.val("m/44'/77'/0'");
                 DOM.hardenedAddresses.prop('checked', false);
             },
         }

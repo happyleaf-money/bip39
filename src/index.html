@@ -2,18 +2,21 @@
 <html>
     <head lang="en">
         <meta charset="utf-8" />
-        <title>BIP39 - Mnemonic Code</title>
+        <title>PIVX BIP39 - Mnemonic Code</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <meta content="Mnemonic code for generating deterministic keys" name="description"/>
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-        <meta content="bitcoin mnemonic converter" name="description" />
-        <meta content="Ian Coleman" name="author" />
+        <meta content="pivx mnemonic converter" name="description" />
+        <meta content="Random Zebra" name="author" />
         <link type="image/x-icon" rel="icon" href="data:image/x-icon;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQEAYAAABPYyMiAAAABmJLR0T///////8JWPfcAAAACXBIWXMAAABIAAAASABGyWs+AAAAF0lEQVRIx2NgGAWjYBSMglEwCkbBSAcACBAAAeaR9cIAAAAASUVORK5CYII=" />
 
         <style>
             body {
                 padding-bottom: 32px;
             }
+	    a {
+		color: #8000ff;
+	    }
             .form-control[readonly] {
                 cursor: text;
             }
@@ -31,7 +34,7 @@
                 margin: 0 auto;
                 font-size: 2em;
                 color: #444;
-                border: 2px solid #555;
+                border: 2px solid #8000ff;
                 border-top: 0;
                 border-bottom-left-radius: 20px 20px;
                 border-bottom-right-radius: 20px 20px;
@@ -108,13 +111,22 @@
                 top: 5px;
                 right: 5px;
             }
+	    img.pivx-logo {
+		width: 700px;
+		height: auto;
+		margin: 5px auto;
+	    }
         </style>
     </head>
     <body>
         <div class="container">
+	    <div class="row">
+                <div class="text-center"><img class="pivx-logo" src="img/Colour_ldsp.png"></div>
+	    </div>
 
-            <h1 class="text-center">Mnemonic Code Converter</h1>
-            <p class="version">v0.3.0</p>
+            <h1 class="text-center">PIVX Mnemonic Code Converter</h1>
+            <p class="version">v0.0.1</p>
+	    
             <hr>
             <div class="row">
                 <div class="col-md-12">
@@ -331,7 +343,7 @@
                                         <a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki#registered-coin-types" target="_blank">Coin</a>
                                     </label>
                                     <div class="col-sm-10">
-                                        <input id="coin" type="text" class="coin form-control" value="0">
+                                        <input id="coin" type="text" class="coin form-control" value="119" readonly>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -410,7 +422,7 @@
                                 <div class="form-group">
                                     <label for="bip32-path" class="col-sm-2 control-label">BIP32 Derivation Path</label>
                                     <div class="col-sm-10">
-                                        <input id="bip32-path" type="text" class="path form-control" value="m/0">
+                                        <input id="bip32-path" type="text" class="path form-control" value="m/0'/0'">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -419,30 +431,6 @@
                                         <input class="hardened-addresses" type="checkbox">
                                         <span>Use hardened addresses</span>
                                     </label>
-                                </div>
-                                <div class="form-group">
-                                    <label for="core-path" class="col-sm-2 control-label">Bitcoin Core</label>
-                                    <div class="col-sm-10">
-                                        <p class="form-control no-border">
-                                        Use path <code>m/0'/0'</code> with hardened addresses.
-                                        </p>
-                                        <p class="form-control no-border">
-                                            For more info see the
-                                            <a href="https://github.com/bitcoin/bitcoin/pull/8035" target="_blank">Bitcoin Core BIP32 implementation</a>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="core-path" class="col-sm-2 control-label">Multibit</label>
-                                    <div class="col-sm-10">
-                                        <p class="form-control no-border">
-                                            <span>Use path <code>m/0'/0</code>.</span>
-                                        </p>
-                                        <p class="form-control no-border">
-                                            <span>For more info see</span>
-                                            <a href="https://multibit.org/" target="_blank">MultiBit HD</a>
-                                        </p>
-                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-sm-2 control-label">Block Explorers</label>
@@ -610,14 +598,6 @@
                 <div class="col-md-12">
                     <h2>Derived Addresses</h2>
                     <p>Note these addresses are derived from the BIP32 Extended Key</p>
-                </div>
-                <div class="col-md-12 use-bitpay-addresses-container hidden">
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" class="use-bitpay-addresses">
-                            <span>Use BitPay-style addresses for Bitcoin Cash (ie starting with 'C' instead of '1')</span>
-                        </label>
-                    </div>
                 </div>
                 <div class="col-md-12">
                     <table class="table table-striped">
