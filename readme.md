@@ -2,10 +2,6 @@
 
 A tool for converting BIP39 mnemonic phrases to addresses and private keys.
 
-## Online Version
-
-https://lab.nr1.co.in/bip39/
-
 ## Standalone offline version
 
 Download `bip39-standalone.html`
