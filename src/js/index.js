@@ -6,7 +6,7 @@
     var seed = null;
     var bip32RootKey = null;
     var bip32ExtendedKey = null;
-    var network = bitcoinjs.bitcoin.networks.pivx;
+    var network = bitcoinjs.bitcoin.networks.happyleaf;
     var addressRowTemplate = $("#address-row-template");
 
     var showIndex = true;

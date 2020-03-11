@@ -215,7 +215,18 @@ bitcoinjs.bitcoin.networks.pivx = {
   },
   pubKeyHash: 0x1e, 	//30
   scriptHash: 0x0d, 	//13
-  wif: 0xd4		//212
+  wif: 0xd4		        //212
+};
+
+bitcoinjs.bitcoin.networks.happyleaf = {
+  messagePrefix: 'unused',
+  bip32: {
+    public: 0x022d2533,
+    private: 0x0221312b
+  },
+  pubKeyHash: 0x29, 	//41
+  scriptHash: 0x65, 	//101
+  wif: 0x59		        //89
 };
 
 bitcoinjs.bitcoin.networks.pivxtestnet = {
